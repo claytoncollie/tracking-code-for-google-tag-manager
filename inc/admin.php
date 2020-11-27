@@ -12,7 +12,7 @@ if ( ! defined( 'WPINC' ) ) {
 
 add_action( 'admin_init', 'tracking_code_for_google_tag_manager_add_settings_field', 10, 0 );
 /**
- * Register the settings field for the measurement ID.
+ * Register the settings field for the container ID.
  *
  * @return void
  * @since 1.0.0
@@ -28,7 +28,7 @@ function tracking_code_for_google_tag_manager_add_settings_field() {
 			'id'          => 'tracking-code-for-google-tag-manager',
 			'name'        => 'tracking_code_for_google_tag_manager',
 			'value'       => get_option( 'tracking_code_for_google_tag_manager', '' ),
-			'description' => esc_html__( 'Enter your Google Tag Manager measurement ID eg. UA-1234567', 'tracking-code-for-google-tag-manager' ),
+			'description' => esc_html__( 'Enter your Google Tag Manager container ID eg. GTM-1234567', 'tracking-code-for-google-tag-manager' ),
 		)
 	);
 
@@ -37,7 +37,7 @@ function tracking_code_for_google_tag_manager_add_settings_field() {
 		'tracking_code_for_google_tag_manager',
 		array(
 			'type'              => 'string',
-			'description'       => esc_html__( 'Google Tag Manager measurement ID', 'tracking-code-for-google-tag-manager' ),
+			'description'       => esc_html__( 'Google Tag Manager container ID', 'tracking-code-for-google-tag-manager' ),
 			'sanitize_callback' => 'sanitize_text_field',
 			'show_in_rest'      => true,
 			'default'           => '',
@@ -46,7 +46,7 @@ function tracking_code_for_google_tag_manager_add_settings_field() {
 }
 
 /**
- * Text field for measurement ID.
+ * Text field for container ID.
  *
  * @param array $args The field settings.
  * @return void

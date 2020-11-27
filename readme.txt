@@ -1,9 +1,9 @@
 === Tracking Code for Google Tag Manager ===
 Contributors: claytoncollie
 Donate link: https://www.claytoncollie.com/
-Tags: google, analytics, tracking code, measurement, universal analytics, tracking snippet
-Requires at least: 4.8
-Tested up to: 5.5.3
+Tags: google, tag manager, tracking code, container, google tag manager, tracking snippet
+Requires at least: 5.2
+Tested up to: 5.6.0
 Requires PHP: 5.6
 Stable tag: 1.0.0
 License: GPLv3 or later
@@ -13,9 +13,7 @@ Simple, lightweight solution for inserting your Google Tag Manager Universal tra
 
 == Description ==
 
-Tracking Code For Google Tag Manager is a simple, lightweight WordPress plugin for inserting your Google Tag Manager Universal Analytics tracking code. The plugin does one thing and one thing only; prints the standard Google Tag Manager tacking script to the `<head>` of your website. To insert your measurement ID, navigate to Settings > General and then scroll to the bottom of the page.
-
-This plugin will not work with Google Tag Manager 4; only the Universal Analytics version.
+Tracking Code For Google Tag Manager is a simple, lightweight WordPress plugin for inserting your Google Tag Manager tracking code. The plugin does one thing and one thing only; prints the standard Google Tag Manager tacking script to the `<head>` of your website. To insert your container ID, navigate to Settings > General and then scroll to the bottom of the page.
 
 ### Composer
 
@@ -23,20 +21,20 @@ This plugin will not work with Google Tag Manager 4; only the Universal Analytic
 
 ### Filters
 
-If you want to set the measurement ID without using the wp-admin user interface, use the filter below.
+If you want to set the container ID without using the wp-admin user interface, use the filter below.
 
 `
 add_filter(
 	'tracking_code_for_google_tag_manager_id',
 	/**
-	 * Set Google Tag Manager measurement ID.
+	 * Set Google Tag Manager container ID.
 	 *
-	 * @param string $measurement_id Measurement ID.
+	 * @param string $container_id Container ID.
 	 *
 	 * @return string
 	 */
-	function ( $measurement_id ) {
-		return 'UA-7654321';
+	function ( $container_id ) {
+		return 'GTM-7654321';
 	}
 );
 `
@@ -52,7 +50,7 @@ https://github.com/claytoncollie/tracking-code-for-google-tag-manager
 1. Upload `tracking-code-for-google-tag-manager` to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. Navigate to Settings > General > scroll to the bottom of the page
-4. Insert your measurement ID
+4. Insert your container ID
 5. Save your changes
 
 == Frequently Asked Questions ==
