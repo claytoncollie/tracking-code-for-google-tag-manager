@@ -72,8 +72,7 @@ function tracking_code_for_google_tag_manager_do_the_body_script() {
 		// phpcs:disable
 		'
 		<!-- Google Tag Manager (noscript) -->
-		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=%1$s"
-		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=%1$s" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<!-- End Google Tag Manager (noscript) -->
 		',
 		// phpcs:enable
