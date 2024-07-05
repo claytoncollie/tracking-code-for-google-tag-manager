@@ -1,9 +1,9 @@
 === Tracking Code for Google Tag Manager ===
 Contributors: claytoncollie
 Donate link: https://www.claytoncollie.com/
-Tags: google, tag manager, tracking code, container, google tag manager, tracking snippet
+Tags: google, tag manager, tracking code, container, google tag manager
 Requires at least: 5.2
-Tested up to: 5.6.0
+Tested up to: 6.6.0
 Requires PHP: 5.6
 Stable tag: 1.0.0
 License: GPLv3 or later
