@@ -5,27 +5,19 @@
  * @package Tracking_Code_For_Google_Tag_Manager
  */
 
-// If this file is called directly, abort.
-if ( ! defined( 'WPINC' ) ) {
-	die;
-}
+namespace Tracking_Code_For_Google_Tag_Manager;
 
-add_action( 'wp_head', 'tracking_code_for_google_tag_manager_do_the_head_script', 1, 0 );
+use function Tracking_Code_For_Google_Tag_Manager\get_the_id;
+
+add_action( 'wp_head', __NAMESPACE__ . '\head_script', 1 );
 /**
  * Output the tracking code snippet to the frontend inside the header element.
  *
  * @return void
  * @since 1.0.0
  */
-function tracking_code_for_google_tag_manager_do_the_head_script() {
-	/**
-	 * Filter the container_id variable to support other methods of setting this value.
-	 *
-	 * @param string $container_id The Google Tag Manager container ID.
-	 * @return string
-	 * @since 1.0.0
-	 */
-	$container_id = apply_filters( 'tracking_code_for_google_tag_manager_id', get_option( 'tracking_code_for_google_tag_manager', '' ) );
+function head_script() : void {
+	$container_id = get_the_id();
 
 	if ( '' === $container_id ) {
 		return;
@@ -47,22 +39,15 @@ function tracking_code_for_google_tag_manager_do_the_head_script() {
 	);
 }
 
-add_action( 'wp_body_open', 'tracking_code_for_google_tag_manager_do_the_body_script', 1, 0 );
+add_action( 'wp_body_open', __NAMESPACE__ . '\body_script', 1 );
 /**
  * Output the tracking code snippet to the frontend inside the body element.
  *
  * @return void
  * @since 1.0.0
  */
-function tracking_code_for_google_tag_manager_do_the_body_script() {
-	/**
-	 * Filter the container_id variable to support other methods of setting this value.
-	 *
-	 * @param string $container_id The Google Tag Manager container ID.
-	 * @return string
-	 * @since 1.0.0
-	 */
-	$container_id = apply_filters( 'tracking_code_for_google_tag_manager_id', get_option( 'tracking_code_for_google_tag_manager', '' ) );
+function body_script() : void {
+	$container_id = get_the_id();
 
 	if ( '' === $container_id ) {
 		return;

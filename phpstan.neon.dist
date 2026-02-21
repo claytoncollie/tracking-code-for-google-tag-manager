@@ -1,9 +1,10 @@
-includes:
-    - vendor/szepeviktor/phpstan-wordpress/extension.neon
 parameters:
-    level: max
-    paths:
-        - tracking-code-for-google-tag-manager.php
-        - inc/admin.php
-        - inc/public.php
-    checkMissingIterableValueType: false
+	level: max
+	bootstrapFiles:
+		- vendor/php-stubs/wordpress-stubs/wordpress-stubs.php
+		- vendor/szepeviktor/phpstan-wordpress/bootstrap.php
+	paths:
+		- tracking-code-for-google-tag-manager.php
+		- inc/admin.php
+		- inc/public.php
+		- inc/tracking-id.php

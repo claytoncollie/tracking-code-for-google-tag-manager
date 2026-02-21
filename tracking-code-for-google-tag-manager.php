@@ -6,15 +6,17 @@
  * Author:          Clayton Collie
  * Author URI:      https://github.com/claytoncollie
  * Text Domain:     tracking-code-for-google-tag-manager
- * Version:         1.0.0
+ * Version:         2.0.0
  *
  * @package         Tracking_Code_For_Google_Tag_Manager
  */
 
-// If this file is called directly, abort.
-if ( ! defined( 'WPINC' ) ) {
-	die;
-}
+namespace Tracking_Code_For_Google_Tag_Manager;
 
+const OPTION_NAME = 'tracking_code_for_google_tag_manager';
+const FILTER_NAME = 'tracking_code_for_google_tag_manager_id';
+const CONFIG_NAME = 'TRACKING_CODE_FOR_GOOGLE_TAG_MANAGER_ID';
+
+require_once __DIR__ . '/inc/tracking-id.php';
 require_once __DIR__ . '/inc/admin.php';
 require_once __DIR__ . '/inc/public.php';
