@@ -1,0 +1,10 @@
+{
+	"plugins": [
+		"."
+	],
+	"mappings": {
+		"wp-cli.yml": "./tests/bin/wp-cli.yml",
+		"wp-content/plugins/filter.php": "./tests/cypress/test-plugins/filter.php",
+		"wp-content/plugins/definition.php": "./tests/cypress/test-plugins/definition.php"
+	}
+}
